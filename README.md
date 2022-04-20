@@ -20,8 +20,10 @@ See the top of [main.py](src/main.py)
     # the output file where the data is put (1 match from above per line)
     OUTPUT_FILE = "clipboard-urls.txt"
 
-    # a = append 
-    # w = write (overwrite each time the file is opened) -> would need to change the class to prevent the call of self.handle.close()
+    # file write mode
+    # if you want to use 'w' then you probably want to chagne the class
+    # so that it doesn't call handle.close() after each write,
+    # otherwise it will overwrite all the content each time
     WRITE_MODE = "a"
 
     # if you don't want the program to remove whitespace (i.e call str.strip())

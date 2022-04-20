@@ -2,6 +2,7 @@ import tkinter
 import re 
 import os 
 
+
 # will only write text that matches anything in here 
 MATCHES = [ 
         
@@ -15,12 +16,16 @@ DELAY_MS = 50
 # the output file where the data is put (1 match from above per line)
 OUTPUT_FILE = "clipboard-urls.txt"
 
-# a = append 
-# w = write (overwrite each time the file is opened) -> would need to change the class to prevent the call of self.handle.close()
+# file write mode
+# if you want to use 'w' then you probably want to chagne the class
+# so that it doesn't call handle.close() after each write,
+# otherwise it will overwrite all the content each time
+# basically comment out the last 3 lines of 'set_value(self)'
 WRITE_MODE = "a"
 
 # if you don't want the program to remove whitespace (i.e call str.strip())
 # see uwu.write_url and remove the url = url.strip() 
+
 
 class uwu():
 
