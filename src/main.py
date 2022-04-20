@@ -46,8 +46,14 @@ class uwu():
 
         self.handle = open(self.log_file, WRITE_MODE)  # create the file 
 
-        self.set_value(self.window.clipboard_get())
+        self.set_value(self.get_clipboard())
 
+    def get_clipboard(self):
+
+        try:
+            return self.window.clipboard_get()
+        except tkinter.TclError:
+            return ""
 
     def write_url(self, url):
         
@@ -84,7 +90,7 @@ class uwu():
     def run_listener(self):
         
         # check clipboard for a new value 
-        temp_value = self.window.clipboard_get()
+        temp_value = self.get_clipboard()
 
         if self.last_value != temp_value:
 
