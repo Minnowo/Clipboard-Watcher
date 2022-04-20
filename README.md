@@ -21,9 +21,10 @@ See the top of [main.py](src/main.py)
     OUTPUT_FILE = "clipboard-urls.txt"
 
     # file write mode
-    # if you want to use 'w' then you probably want to chagne the class
+    # if you want to use 'w' then you probably want to change the class
     # so that it doesn't call handle.close() after each write,
     # otherwise it will overwrite all the content each time
+    # basically comment out the last 3 lines of 'set_value(self)'
     WRITE_MODE = "a"
 
     # if you don't want the program to remove whitespace (i.e call str.strip())
